@@ -1,14 +1,9 @@
-- name: Install git
-  win_chocolatey:
-    name: git
-    state: present
-
-- name: Install vscode
-  win_chocolatey:
-    name: vscode
-    state: present
-
-- name: Install notepadplusplus 
-  win_chocolatey:
-    name: notepadplusplus
-    state: present
+- name: "Chocolatey"
+  hosts: windows
+  tasks:
+    - name: Install chocolatey
+      win_chocolatey:
+          name:
+           - chocolatey
+           - chocolatey-core.extension
+          state: present
